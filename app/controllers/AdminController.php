@@ -110,7 +110,7 @@ class AdminController extends BaseController
 		$path = public_path('/img/products/'.$filename);
 		Image::make($image->getRealPath())->save($path);
 
-		$product->image = '/img/products/'.$filename;
+		$product->image = $filename;
 
 		$product->save();
 
@@ -159,7 +159,7 @@ class AdminController extends BaseController
 			Image::make($image->getRealPath())->save($path);
 			File::delete('public/'.$product->image);
 
-			$product->image = '/img/products'.$filename;
+			$product->image = $filename;
 
 		}
 		

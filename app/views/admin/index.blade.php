@@ -20,7 +20,7 @@
 		<tr>
 			<td>{{ $category->id }}</td>
 			<td>{{ link_to_route('EditCategory', $category->name, $category->id) }}</td>
-			<td>{{ link_to_route('DeleteCategory', 'Eliminar', $category->id) }}</td>
+			<td>{{ link_to_route('DeleteCategory', '(X)', $category->id) }}</td>
 		</tr>
 		@endforeach
 	</table>
@@ -35,15 +35,17 @@
 			<th>Nombre</th>
 			<th>Precio</th>
 			<th>Categoría</th>
+			<th>Imagen</th>
 			<th>Borrar</th>
 		</tr>
 		@foreach($products as $product)
 		<tr>
 			<td>{{ $product->id }}</td>
 			<td>{{ link_to_route('EditProduct', $product->name, $product->id) }}</td>
-			<td>{{ $product->price }}</td>
+			<td>{{ $product->price.'€' }}</td>
 			<td>{{ $product->category_id }}</td>
-			<td>{{ link_to_route('DeleteProduct', 'Eliminar', $product->id) }}</td>
+			<td>{{ HTML::image('img/products/'.$product->image, $product->name, array('width' => '50', 'height' => '50')) }}</td>
+			<td>{{ link_to_route('DeleteProduct', '(X)', $product->id) }}</td>
 		</tr>
 		@endforeach
 	</table>

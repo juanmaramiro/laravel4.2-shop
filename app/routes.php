@@ -13,7 +13,9 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	$categories = Category::all();
+	$products = Product::all();
+	return View::make('hello')->withCategories($categories)->withProducts($products);
 });
 
 Route::group(array('prefix' => 'admin'), function(){

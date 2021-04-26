@@ -15,7 +15,7 @@ Route::get('/', function()
 {
 	$categories = Category::all();
 	$products = Product::all();
-	return View::make('hello')->withCategories($categories)->withProducts($products);
+	return View::make('index')->withCategories($categories)->withProducts($products);
 });
 
 Route::group(array('prefix' => 'admin'), function(){

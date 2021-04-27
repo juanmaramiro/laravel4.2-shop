@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-	<h3>Edita la categoría {{$category->name}} </h3>
+	<h3>Edita la categoría: {{$category->name}} </h3>
 
 	<hr>
 

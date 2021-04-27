@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-	<h3>Edita el producto {{$product->name}} </h3>
+	<h3>Edita el producto: {{$product->name}} </h3>
 
 	<hr>
 

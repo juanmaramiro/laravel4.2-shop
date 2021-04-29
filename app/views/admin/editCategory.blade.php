@@ -22,6 +22,7 @@
 			</svg>
 			Atrás
 		</a>
+		<span class="navbar-text">Bienvenido, {{ Auth::user()->username }} || <a href="{{route('LogOut')}}">Logout</a></span>
 	</nav>
 
 	<main role="main" class="container">

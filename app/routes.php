@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/', array('uses' => 'HomeController@showWelcome', 'as' => 'Home'));
+
 Route::get('/', function()
 {
 	$categories = Category::all();
@@ -18,7 +20,18 @@ Route::get('/', function()
 	return View::make('index')->withCategories($categories)->withProducts($products);
 });
 
-Route::group(array('prefix' => 'admin'), function(){
+## Login & register
+Route::get('login', 'HomeController@getLogin');
+Route::post('login', 'HomeController@postLogin');
+Route::get('register', 'HomeController@getRegister');
+Route::post('register', 'HomeController@postRegister');
+Route::get('login', function()
+{
+	return View::make('login');
+});
+Route::get('logout', array('uses' => 'HomeController@logout', 'as' => 'LogOut'));
+
+Route::group(array('prefix' => 'admin', 'before' => 'auth'), function(){
 
 	Route::get('/', array('uses' => 'AdminController@welcome', 'as' => 'AdminIndex'));
 	

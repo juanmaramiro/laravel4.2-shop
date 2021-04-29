@@ -30,6 +30,15 @@
         padding: 3rem 1.5rem;
         text-align: center;
       }
+
+      .navbar-nav li:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    margin-top: 0; // fixes closing on slow mouse transition
+  }
+
     </style>
    
     <!-- Custom styles for this template -->
@@ -45,11 +54,12 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">LaravelShop <span class="sr-only">(current)</span></a>
-          </li>
+          <a class="navbar-brand" href="{{route('Home')}}">
+            <img src="img/clipart2315515.png" width="37" class="d-inline-block align-top" alt="">
+            TokyoShop
+          </a>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
+            <a class="nav-link" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
             <div class="dropdown-menu bg-dark" aria-labelledby="dropdown01">
               <a class="dropdown-item bg-dark" style="color: #EEECEB" href="#">Camisetas</a>
               <a class="dropdown-item bg-dark" style="color: #EEECEB" href="#">Figuras</a>
@@ -66,9 +76,17 @@
             <a class="nav-link" href="#">Acerca de</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Introduce tu búsqueda" aria-label="Search">
-          <button class="btn btn-info my-2 my-sm-0" type="submit">Buscar</button>
+
+        @if(Auth::check())
+
+          <span class="navbar-text">Bienvenido, {{ Auth::user()->username }} || <a href="{{route('LogOut')}}">Logout</a></span>
+
+        @else
+
+        <span class="navbar-text"><a href="{{url('login')}}">Login</a> || <a href="{{url('register')}}">Registro</a></span>
+
+        @endif
+
       </div>
     </nav>
 

@@ -15,9 +15,11 @@
 
 @section('content')
 	<nav class="navbar navbar-dark bg-dark fixed-top align-middle">
-  		<a class="navbar-brand" href="index.php">
-			LaravelShop
-		</a>
+  		<a class="navbar-brand" href="{{route('Home')}}">
+    		<img src="img/clipart2315515.png" width="37" class="d-inline-block align-top" alt="">
+    		TokyoShop
+  		</a>
+		<span class="navbar-text">Bienvenido, {{ Auth::user()->username }} || <a href="{{route('LogOut')}}">Logout</a></span>
 	</nav>
 
     <main role="main" class="container">
@@ -25,6 +27,7 @@
   			<div class="container">
   				<h3>Panel de Administración</h3>
   				<hr>
+
   				<button type="button" class="btn btn-outline-primary col-md-4 col-lg-3 col-xl-2" onclick="location.href='{{route('NewCategory')}}';">
   					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
   					<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>

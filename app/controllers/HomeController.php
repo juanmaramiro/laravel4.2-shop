@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Session;
+
 class HomeController extends BaseController {
 
 	/*
@@ -17,7 +19,78 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('welcome');
+		return View::make('index');
+	}
+
+	## Login
+	public function getLogin()
+	{
+		return View::make('login');
+	}
+
+	public function postLogin()
+	{
+		$input = Input::all();
+
+		$rules = array('email' => 'required', 'password' => 'required');
+
+		$validation = Validator::make($input, $rules);
+
+		if($validation->fails())
+		{
+			return Redirect::to('login')->withErrors($validation->messages());
+		} else {
+			$credentials = array('email' => Input::get('email'), 'password' => Input::get('password'));
+
+			if(Auth::attempt($credentials))
+			{
+				return Redirect::route('AdminIndex');
+			} else {
+				return Redirect::to('login');
+			}
+		}
+	}
+
+	## Register
+	public function getRegister()
+	{
+		return View::make('register');
+	}
+
+	public function postRegister()
+	{
+		$input = Input::all();
+
+		$rules = array('username' => 'required|unique:users', 'email' => 'required|unique:users|email', 'password' => 'required');
+
+		$validation = Validator::make($input, $rules);
+
+		if($validation->fails())
+		{
+			return Redirect::to('register')->withInput()->withErrors($validation->messages());
+		}
+
+		$password = Input::get('password');
+		$password = Hash::make($password);
+
+		$user = new User;
+
+		$user->username = Input::get('username');
+
+		$user->email = Input::get('email');
+		$user->password = $password;
+
+		$user->save();
+
+		return Redirect::to('login');
+	}
+
+	## Logout
+	public function logout()
+	{
+		Auth::logout();
+		Session::flush();
+		return Redirect::to('login');
 	}
 
 }

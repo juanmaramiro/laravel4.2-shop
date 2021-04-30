@@ -12,6 +12,7 @@
 @stop
 
 <link href="../../css/bootstrap.min.css" rel="stylesheet">
+<link rel="shortcut icon" type="image/jpg" href="../../img/favicon.ico"/>
 
 @section('content')
 

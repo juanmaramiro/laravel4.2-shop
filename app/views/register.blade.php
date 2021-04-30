@@ -27,6 +27,7 @@
 
 <link href="../css/bootstrap.min.css" rel="stylesheet">
 <link href="../css/signin.css" rel="stylesheet">
+<link rel="shortcut icon" type="image/jpg" href="img/favicon.ico"/>
 
 @section('content')
 
@@ -52,7 +53,7 @@
 
     {{ HTML::link('login', 'Atrás', array('class' => 'btn btn-lg btn-primary btn-block'))}}
 
-    <p class="mt-5 mb-3 text-muted">&copy; 2021 LaravelShop</p>
+    <p class="mt-5 mb-3 text-muted">&copy; 2021 TokyoShop</p>
   
   {{ Form::close()}}
 

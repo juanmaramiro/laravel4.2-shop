@@ -31,6 +31,8 @@ Route::get('login', function()
 });
 Route::get('logout', array('uses' => 'HomeController@logout', 'as' => 'LogOut'));
 
+Route::get('/category/{id}', array('uses' => 'HomeController@getCategory', 'as' => 'getCategory'));
+
 Route::group(array('prefix' => 'admin', 'before' => 'auth'), function(){
 
 	Route::get('/', array('uses' => 'AdminController@welcome', 'as' => 'AdminIndex'));

@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Laravel Shop</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico"/>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="../img/favicon.ico"/>
 
     <style>
       .bd-placeholder-img {
@@ -44,7 +44,6 @@
    
   </head>
   <body>
-    
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -53,7 +52,7 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <a class="navbar-brand" href="{{route('Home')}}">
-            <img src="img/clipart2315515.png" width="37" class="d-inline-block align-top" alt="">
+            <img src="../img/clipart2315515.png" width="37" class="d-inline-block align-top" alt="">
             TokyoShop
           </a>
           <li class="nav-item dropdown">
@@ -87,7 +86,7 @@
 
       </div>
     </nav>
-
+      
     <main role="main" class="container">
       <div class="album py-5 bg-light">
         <div class="container">
@@ -139,7 +138,7 @@
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery.slim.min.js"><\/script>')</script><script src="js/bootstrap.bundle.min.js"></script>
-      
-  </body>
+    <script>window.jQuery || document.write('<script src="../js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../js/bootstrap.bundle.min.js"></script>
+
+</body>
 </html>

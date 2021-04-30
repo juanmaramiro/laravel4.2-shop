@@ -93,4 +93,13 @@ class HomeController extends BaseController {
 		return Redirect::to('login');
 	}
 
+	## Categories
+	public function getCategory($id)
+	{
+		$categories = Category::all();
+			$products = Product::where('category_id', '=', $id)->get();
+
+			return View::make('category',compact('categories'))->withProducts($products)->withCurrent($id);
+	}
+
 }

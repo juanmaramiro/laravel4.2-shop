@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-	Añade una nueva Categoría
+	Nueva Categoría - Tokyo Shop
 @stop
 
 @section('style')
@@ -43,7 +43,7 @@
   					</div>
   				</div>
 
-				<button type="submit" class="btn btn-primary">Añadir</button>
+				  <button type="submit" class="btn btn-primary">Añadir</button>
 
 				{{ Form::close() }}
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Home - Tokyo Shop</title>
+    <title>Contacto - Tokyo Shop</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico"/>
 
@@ -57,7 +57,7 @@
             TokyoShop
           </a>
           <li class="nav-item dropdown">
-            <a class="nav-link" href="{{route('Home')}}" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
+            <a class="nav-link" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
             <div class="dropdown-menu bg-dark" aria-labelledby="dropdown01">
               <a class="dropdown-item bg-dark" style="color: #EEECEB" href="{{route('getCategory', ['id' => 2])}}">Figuras</a>
               <a class="dropdown-item bg-dark" style="color: #EEECEB" href="{{route('getCategory', ['id' => 3])}}">Camisetas</a>
@@ -65,7 +65,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('Contact') }}">Contacto</a>
+            <a class="nav-link" href="#">Contacto</a>
           </li>
         </ul>
 
@@ -85,48 +85,28 @@
     <main role="main" class="container">
       <div class="album py-5 bg-light">
         <div class="container">
+          <h3>Formulario de Contacto</h3>
+          <form action="mailto:admin@tokyoshop.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label for="inputUsername">Usuario</label>
+              <input type="text" class="form-control" id="inputUsername" placeholder="Usuario" value="{{ Auth::user()->username }}" readonly>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail">Email</label>
+              <input type="email" class="form-control" id="inputEmail" placeholder="Email" value="{{ Auth::user()->email }}" readonly>
+            </div>
+            <div class="form-group">
+              <label for="inputSubject">Asunto</label>
+              <input type="text" class="form-control" id="inputSubject" placeholder="Asunto" required>
+            </div>
+            <div class="form-group">
+              <label for="inputDescription">Descripción</label>
+              <textarea class="form-control" id="inputDescription" placeholder="Descripcion" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
 
-          <div class="row">
-
-              @foreach($products as $product)
-
-                <div class="col-md-4">
-                  <div class="card mb-4 shadow-sm">
-                    
-                    <span class="img-fluid">{{ HTML::image('img/products/'.$product->image, $product->name, array('width' => '100%', 'height' => '300')) }}</span>
-
-                    <div class="card-body">
-                      <h5 class="card-title">{{ $product->name }}</h5>
-                      <p class="card-text" style="min-height: 80px">{{ $product->description }}</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-success" disabled>{{ $product->price.'€' }}</button> 
-                          <button type="button" class="btn btn-sm btn-primary">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
-                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                            </svg>
-                            Añadir al carrito
-                          </button>
-                        </div>
-                        
-                        @foreach($categories as $category)
-                          
-                          @if($product->category_id == $category->id)
-                            
-                            <small class="text-muted">{{ $category->name }}</small>
-                         
-                          @endif
-                        
-                        @endforeach
-                      
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              @endforeach
-
-          </div>
         </div>
       </div>
 

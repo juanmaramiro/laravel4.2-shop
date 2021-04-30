@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-	Edita una categoría
+	Edita una categoría - Tokyo Shop
 @stop
 
 @section('style')
@@ -42,7 +42,7 @@
   					</div>
   				</div>
 	
-				<button type="submit" class="btn btn-primary">Editar</button>
+					<button type="submit" class="btn btn-primary">Editar</button>
 
 				{{ Form::close() }}
 

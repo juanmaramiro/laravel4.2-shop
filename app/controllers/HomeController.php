@@ -22,6 +22,11 @@ class HomeController extends BaseController {
 		return View::make('index');
 	}
 
+	public function contact()
+	{
+		return View::make('contact');
+	}
+
 	## Login
 	public function getLogin()
 	{

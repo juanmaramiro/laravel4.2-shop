@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-	Sign up
+	Sign up - Tokyo Shop
 @stop
 
 @section('style')
@@ -51,7 +51,7 @@
   
     <button class="btn btn-lg btn-success btn-block" type="submit">Registro</button>
 
-    {{ HTML::link('login', 'Atrás', array('class' => 'btn btn-lg btn-primary btn-block'))}}
+    {{ HTML::link('login', 'Login', array('class' => 'btn btn-lg btn-primary btn-block'))}}
 
     <p class="mt-5 mb-3 text-muted">&copy; 2021 TokyoShop</p>
   

@@ -33,6 +33,8 @@ Route::get('logout', array('uses' => 'HomeController@logout', 'as' => 'LogOut'))
 
 Route::get('/category/{id}', array('uses' => 'HomeController@getCategory', 'as' => 'getCategory'));
 
+Route::get('contact', array('uses' => 'HomeController@contact', 'as' => 'Contact', 'before' => 'auth'));
+
 Route::group(array('prefix' => 'admin', 'before' => 'auth'), function(){
 
 	Route::get('/', array('uses' => 'AdminController@welcome', 'as' => 'AdminIndex'));

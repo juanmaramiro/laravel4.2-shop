@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Laravel Shop</title>
+    <title>Categorías - Tokyo Shop</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/jpg" href="../img/favicon.ico"/>
 
@@ -56,7 +56,7 @@
             TokyoShop
           </a>
           <li class="nav-item dropdown">
-            <a class="nav-link" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
+            <a class="nav-link" href="{{route('Home')}}" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
             <div class="dropdown-menu bg-dark" aria-labelledby="dropdown01">
               <a class="dropdown-item bg-dark" style="color: #EEECEB" href="{{route('getCategory', ['id' => 2])}}">Figuras</a>
               <a class="dropdown-item bg-dark" style="color: #EEECEB" href="{{route('getCategory', ['id' => 3])}}">Camisetas</a>
@@ -64,13 +64,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Comunidad</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Acerca de</a>
+            <a class="nav-link" href="{{ route('Contact')}}">Contacto</a>
           </li>
         </ul>
 

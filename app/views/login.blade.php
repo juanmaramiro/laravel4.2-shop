@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-	Sign in
+	Sign in - Tokyo Shop
 @stop
 
 @section('style')

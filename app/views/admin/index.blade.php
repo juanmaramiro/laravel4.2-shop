@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-	Panel de Administración
+	Panel de Administración - Tokyo Shop
 @stop
 
 @section('style')
